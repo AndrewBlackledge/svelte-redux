@@ -1,21 +1,21 @@
 {
-  "name": "@ourway/firebase-template",
+  "name": "@ourway/svelte-redux",
   "version": "0.0.1",
-  "description": "A template for making sveltekit/firebase projects.",
+  "description": "Svelte enhancer to connect to a redux store.",
   "author": "Alex Nicolaou",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/anicolao/firebase-template.git"
+    "url": "git+ssh://git@github.com/AndrewBlackledge/svelte-redux.git"
   },
   "keywords": [
-    "firebase",
+    "redux",
     "svelte"
   ],
-  "license": "MIT",
+  "license": "GPLv3",
   "bugs": {
-    "url": "https://github.com/anicolao/firebase-template/issues"
+    "url": "https://github.com/AndrewBlackledge/svelte-redux/issues"
   },
-  "homepage": "https://github.com/anicolao/firebase-template#readme",
+  "homepage": "https://github.com/AndrewBlackledge/svelte-redux#readme",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
