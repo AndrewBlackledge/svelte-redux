@@ -1,7 +1,6 @@
-import type { StoreEnhancer, configureStore } from "@reduxjs/toolkit";
-import type { Writable } from "svelte/store";
+import { type ReducersMapObject, configureStore } from "@reduxjs/toolkit";
 
-export function svelteStoreEnhancer(
+function svelteStoreEnhancer(
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   createStoreApi: (arg0: any, arg1: any) => any,
 ) {
@@ -21,22 +20,10 @@ export function svelteStoreEnhancer(
   };
 }
 
-/*
-const reducer = {
-  names,
-  inventory,
-  history,
-};
-
-const reduxStore = configureStore({
-  reducer,
-  enhancers: [svelteStoreEnhancer],
-  middleware: [],
-  devTools: { maxAge: 100000 },
-});
-export type ReduxStore = typeof reduxStore;
-export type GlobalState = ReturnType<typeof reduxStore.getState>;
-export type SvelteStore = Writable<GlobalState>;
-
-export const store = reduxStore as ReduxStore & SvelteStore;
-*/
+export function configureSvelteStore<S>(reducer: ReducersMapObject<S>) {
+  return configureStore({
+    reducer,
+    enhancers: [svelteStoreEnhancer],
+    devTools: { maxAge: 100000 },
+  });
+}
